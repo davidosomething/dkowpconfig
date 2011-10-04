@@ -1,0 +1,5 @@
+WordPress config and .gitignore
+
+This is some boilerplate code that allows you to have different environments in WordPress based on the existence of the configuration file for that environment.
+
+.gitignore has some useful directives and ignores the production config so you won't accidentally check in your sensitive database info.

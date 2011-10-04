@@ -1,0 +1,40 @@
+# git 1.7.1+ required for boolean operator!
+# files for this project in particular
+wp-config-prod.php
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+
+
+################################################################################
+# OS or Editor folders
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+.DS_Store
+*.DS_Store
+*.lock
+
+# SCM files/folders
+.hg
+.svn
+
+# Junk
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# Dreamweaver added files
+_notes
+dwsync.xml
