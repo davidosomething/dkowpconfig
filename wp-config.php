@@ -33,10 +33,6 @@ define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']); // path to blog root
 define('DISALLOW_FILE_EDIT', true); // turn off that useless thing
 define('WP_POST_REVISIONS', false); // turn off post revisions
 
-// useful
-define('TEMPLATEPATH',   get_template_directory());
-define('STYLESHEETPATH', get_stylesheet_directory());
-
 /**#@+
  * Authentication Unique Keys and Salts.
  *
