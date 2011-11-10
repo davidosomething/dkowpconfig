@@ -26,10 +26,16 @@ elseif (file_exists(CONFIG_FILE_DEV)) {
 elseif (file_exists(CONFIG_FILE_PROD)) {
   include CONFIG_FILE_PROD;
 }
-// HTTP_HOST is not as secure as SERVER_NAME
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME']);
-define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
+// note: HTTP_HOST is not as secure as SERVER_NAME
+define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME']); // path to wordpress
+define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']); // path to blog root
+
 define('DISALLOW_FILE_EDIT', true); // turn off that useless thing
+define('WP_POST_REVISIONS', false); // turn off post revisions
+
+// useful
+define('TEMPLATEPATH',   get_template_directory());
+define('STYLESHEETPATH', get_stylesheet_directory());
 
 /**#@+
  * Authentication Unique Keys and Salts.
