@@ -1,10 +1,28 @@
-# git 1.7.1+ required for boolean operator!
-# files for this project in particular
+# base folder
+/*
+!.gitignore
+!.gitmodules
+!README.md
+!bootstrap/
+bootstrap/*.sql
+
+# version wp-config except sample and prod ones
+!wp-config*.php
+wp-config-sample.php
 wp-config-prod.php
+
+# version wp-content, plugins, themes, but not things inside
+!wp-content/
 wp-content/*
 !wp-content/plugins/
+wp-content/plugins/*
 !wp-content/themes/
+wp-content/themes/*
 
+# EDIT HERE, explicitly pick themes to version
+#!bootstrap/local.sql   # careful, only do if you have a private repo
+#!wp-content/plugins/MYPLUGIN
+#!wp-content/themes/MYTHEME
 
 ################################################################################
 # OS or Editor folders
@@ -38,3 +56,4 @@ nbproject
 # Dreamweaver added files
 _notes
 dwsync.xml
+

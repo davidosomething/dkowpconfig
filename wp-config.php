@@ -1,37 +1,35 @@
 <?php
 /**
+ * DKO WordPress Configuration file
  * The base configurations of the WordPress.
  *
  * This file has the following configurations: MySQL settings, Table Prefix,
  * Secret Keys, WordPress Language, and ABSPATH. You can find more information
  * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
  * wp-config.php} Codex page. You can get the MySQL settings from your web host.
- *
- * This file is used by the wp-config.php creation script during the
- * installation. You don't have to use the web site, you can just copy this file
- * to "wp-config.php" and fill in the values.
- *
- * @package WordPress
  */
 
-define ('CONFIG_FILE_LOCAL', dirname(__FILE__).'/wp-config-local.php');
-define ('CONFIG_FILE_DEV', dirname(__FILE__).'/wp-config-dev.php');   // template for PROD version
-define ('CONFIG_FILE_PROD', dirname(__FILE__).'/wp-config-prod.php'); // not version controlled!
+$protocol = 'http://';
+if (array_key_exists('HTTPS', $_SERVER) && $_SERVER['HTTPS'] && $_SERVER['HTTPS'] !== 'off') {
+  $protocol = 'https://';
+}
+define('CONFIG_FILE_LOCAL',  dirname(__FILE__) . '/wp-config-local.php');
+define('CONFIG_FILE_DEV',    dirname(__FILE__) . '/wp-config-dev.php');  // template for PROD version
+define('CONFIG_FILE_PROD',   dirname(__FILE__) . '/wp-config-prod.php'); // not version controlled!
 if (file_exists(CONFIG_FILE_LOCAL)) {
-  include CONFIG_FILE_LOCAL;
+  require_once CONFIG_FILE_LOCAL;
 }
 elseif (file_exists(CONFIG_FILE_DEV)) {
-  include CONFIG_FILE_DEV;
+  require_once CONFIG_FILE_DEV;
 }
 elseif (file_exists(CONFIG_FILE_PROD)) {
-  include CONFIG_FILE_PROD;
+  require_once CONFIG_FILE_PROD;
 }
-// note: HTTP_HOST is not as secure as SERVER_NAME
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME']); // path to wordpress
-define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']); // path to blog root
+define('WP_CONTENT_URL', WP_SITEURL . '/wp-content');
 
-define('DISALLOW_FILE_EDIT', true); // turn off that useless thing
-define('WP_POST_REVISIONS', false); // turn off post revisions
+define('EMPTY_TRASH_DAYS',    0);
+define('DISALLOW_FILE_EDIT',  true);
+define('WP_POST_REVISIONS',   false);
 
 /**#@+
  * Authentication Unique Keys and Salts.
