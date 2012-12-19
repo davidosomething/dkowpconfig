@@ -1,37 +1,3 @@
-# base folder
-/*
-!.gitignore
-!.gitmodules
-!.htaccess
-!README.md
-!bootstrap/
-bootstrap/*.sql
-
-!favicon.ico
-!humans.txt
-!robots.txt
-!crossdomain.xml
-
-# version wp-config except sample and prod ones
-!wp-config*.php
-wp-config-sample.php
-wp-config-prod.php
-
-# version wp-content, plugins, themes, but not things inside
-!wp-content/
-wp-content/*
-!wp-content/mu-plugins
-wp-content/mu-plugins/*
-!wp-content/plugins/
-wp-content/plugins/*
-!wp-content/themes/
-wp-content/themes/*
-
-# EDIT HERE, explicitly pick themes to version
-#!bootstrap/local.sql   # careful, only do if you have a private repo
-#!wp-content/plugins/MYPLUGIN
-#!wp-content/themes/MYTHEME
-
 ################################################################################
 # OS or Editor folders
 Thumbs.db
