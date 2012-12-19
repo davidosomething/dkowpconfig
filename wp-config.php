@@ -4,10 +4,10 @@
  */
 
 if (array_key_exists('HTTPS', $_SERVER) && $_SERVER['HTTPS'] && $_SERVER['HTTPS'] !== 'off') {
-  define('DKO_CONFIG_PROTOCOL'. 'https:');
+  define('DKO_CONFIG_PROTOCOL', 'https:');
 }
 else {
-  define('DKO_CONFIG_PROTOCOL'. 'http:');
+  define('DKO_CONFIG_PROTOCOL', 'http:');
 }
 
 define('DKO_SITE_DIR',   dirname(__FILE__));
