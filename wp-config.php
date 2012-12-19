@@ -21,7 +21,7 @@ $environments = array(
   'prod',
 );
 
-include DKO_CONFIG_DIR . '/common_before.php';
+include DKO_CONFIG_DIR . '/common-before.php';
 foreach ($environments as $environment) {
   $config_file = DKO_CONFIG_DIR . '/' . $environment . '.php';
   if (file_exists($config_file)) {
@@ -29,4 +29,4 @@ foreach ($environments as $environment) {
     break;
   }
 }
-include DKO_CONFIG_DIR . '/common_after.php';
+include DKO_CONFIG_DIR . '/common-after.php';
