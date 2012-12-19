@@ -10,7 +10,8 @@ else {
   define('DKO_CONFIG_PROTOCOL'. 'http:');
 }
 
-define('DKO_CONFIG_DIR',   dirname(__FILE__) . '/config');
+define('DKO_SITE_DIR',   dirname(__FILE__));
+define('DKO_CONFIG_DIR', DKO_SITE_DIR . '/config');
 
 $environments = array(
   'local',
