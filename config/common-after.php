@@ -13,9 +13,12 @@ if (!defined('WP_CONTENT_URL')) define('WP_CONTENT_URL', WP_HOME . '/content');
 
 if (!defined('WP_PLUGIN_DIR')) define('WP_PLUGIN_DIR', dirname(__DIR__) . '/plugins');
 if (!defined('WP_PLUGIN_URL')) define('WP_PLUGIN_URL', WP_HOME . '/plugins');
+if (!defined('PLUGINDIR')) define('PLUGINDIR', dirname(__DIR__) . '/plugins'); // compatibility
 
 if (!defined('WPMU_PLUGIN_URL')) define('WPMU_PLUGIN_URL', dirname(__DIR__) . '/mu-plugins');
 if (!defined('WPMU_PLUGIN_DIR')) define('WPMU_PLUGIN_DIR', WP_HOME . '/mu-plugins');
+
+if (!defined('UPLOADS')) define('UPLOADS', dirname(__DIR__) . '/uploads');
 
 define('WPLANG', '');
 if (!defined('ABSPATH')) define('ABSPATH', __DIR__ . '/wp/');
