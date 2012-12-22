@@ -36,6 +36,7 @@ define('WP_SITEURL', WP_HOME . '/wp'); // path to wordpress
 define('EMPTY_TRASH_DAYS',    0);
 define('DISALLOW_FILE_EDIT',  true);
 define('WP_POST_REVISIONS',   false);
+define('DISALLOW_FILE_MODS',  true); // we deploy with git!
 
 // Authentication Unique Keys and Salts.
 // @link https://api.wordpress.org/secret-key/1.1/salt/
