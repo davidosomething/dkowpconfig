@@ -45,6 +45,7 @@ Configuring
 Deploying on OpenShift
 ======================
 
+In your /.openshift/action_hooks/deploy hook file, add this:
 ````
 rm $OPENSHIFT_REPO_DIR/php/config/local.php && echo "[DEPLOY]--> Deleted local config"
 rm $OPENSHIFT_REPO_DIR/php/config/dev.php   && echo "[DEPLOY]--> Deleted dev config"
