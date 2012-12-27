@@ -30,7 +30,7 @@ This configuration also includes a MU ("must use") plugin that:
 * Displays the current environment in the admin bar
 
 The plugin is found in ````/content/mu-plugins```` and can be disabled by
-deleting the folder `````dkowpconfig.php```` file and ````dkowpconfig````
+deleting the folder ````dkowpconfig.php```` file and ````dkowpconfig````
 folder.
 
 Configuring
