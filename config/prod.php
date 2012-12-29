@@ -28,28 +28,31 @@ define('DB_CHARSET',  'utf8');
 define('DB_COLLATE',  '');
 $table_prefix  = 'wp_';
 
-// Site URLs -- these should be manually set for Production, local can fall
-// back to common-after.php's version:
-// define('WP_HOME',    DKO_CONFIG_PROTOCOL . '//' . $_SERVER['SERVER_NAME']); // path to blog root
-// define('WP_SITEURL', WP_HOME . '/wp'); // path to wordpress
-
-// Authentication Unique Keys and Salts.
-// @link https://api.wordpress.org/secret-key/1.1/salt/
-define('AUTH_KEY',         'CHANGEME!!!');
-define('SECURE_AUTH_KEY',  'CHANGEME!!!');
-define('LOGGED_IN_KEY',    'CHANGEME!!!');
-define('NONCE_KEY',        'CHANGEME!!!');
-define('AUTH_SALT',        'CHANGEME!!!');
-define('SECURE_AUTH_SALT', 'CHANGEME!!!');
-define('LOGGED_IN_SALT',   'CHANGEME!!!');
-define('NONCE_SALT',       'CHANGEME!!!');
-
 // CMS settings
 define('EMPTY_TRASH_DAYS',    0);
 define('DISALLOW_FILE_EDIT',  true);
 define('WP_POST_REVISIONS',   false);
 define('DISALLOW_FILE_MODS',  true); // we deploy with git!
 
+// Site URLs -- these should be manually set for Production, local can fall
+  // back to common-after.php's version:
+  // define('WP_HOME',    DKO_CONFIG_PROTOCOL . '//' . $_SERVER['SERVER_NAME']); // path to blog root
+  // define('WP_SITEURL', WP_HOME . '/wp'); // path to wordpress
+
 // This is where we define the OpenShift specific secure variable functions
 // https://github.com/openshift/wordpress-example/blob/master/php/wp-config.php
+
+// Authentication Unique Keys and Salts.
+// @link https://api.wordpress.org/secret-key/1.1/salt/
+$_default_keys = array(
+  'AUTH_KEY'          => ' w*lE&r=t-;!|rhdx5}vlF+b=+D>a)R:nTY1Kdrw[~1,xDQS]L&PA%uyZ2:w6#ec',
+  'SECURE_AUTH_KEY'   => '}Sd%ePgS5R[KwDxdBt56(DM:0m1^4)-k6_p8}|C:[-ei:&qA)j!X`:7d-krLZM*5',
+  'LOGGED_IN_KEY'     => '$l^J?o)!zhp6s[-x^ckF}|BjU4d+(g1as)n/Q^s+k|,ZZc@E^h%Rx@VTm|0|?]6R',
+  'NONCE_KEY'         => '#f^JM8d^!sVsq]~|4flCZHdaTy.-I.f+1tc[!h?%-+]U}|_8qc K=k;]mXePl-4v',
+  'AUTH_SALT'         => 'I_wL2t!|mSw_z_ zyIY:q6{IHw:R1yTPAO^%!5,*bF5^VX`5aO4]D=mtu~6]d}K?',
+  'SECURE_AUTH_SALT'  => '&%j?6!d<3IR%L[@iz=^OH!oHRXs4W|D,VCD7w%TC.uUa`NpOH_XXpGtL$A]{+pv9',
+  'LOGGED_IN_SALT'    => 'N<mft[~OZp0&Sn#t(IK2px0{KloRcjvIJ1+]:,Ye]>tb*_aM8P&2-bU~_Z>L/n(k',
+  'NONCE_SALT'        => 'u E-DQw%[k7l8SX=fsAVT@|_U/~_CUZesq{v(=y2}#X&lTRL{uOVzw6b!]`frTQ|'
+);
+
 require 'openshift.php'; // combined with openshift.inc
