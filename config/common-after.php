@@ -16,5 +16,5 @@ if (!defined('WP_PLUGIN_URL')) define('WP_PLUGIN_URL', WP_HOME . '/plugins');
 if (!defined('PLUGINDIR')) define('PLUGINDIR', dirname(__DIR__) . '/plugins'); // compatibility
 
 define('WPLANG', '');
-if (!defined('ABSPATH')) define('ABSPATH', __DIR__ . '/wp/');
+if (!defined('ABSPATH')) define('ABSPATH', dirname(__DIR__) . '/wp/');
 require_once(ABSPATH . 'wp-settings.php');
