@@ -28,21 +28,26 @@ define('DB_CHARSET',  'utf8');
 define('DB_COLLATE',  '');
 $table_prefix  = 'wp_';
 
+// Site URLs -- these should be manually set for Production, local can fall
+  // back to common-after.php's version:
+  // define('WP_HOME',    DKO_CONFIG_PROTOCOL . '//' . $_SERVER['SERVER_NAME']); // path to blog root
+  // define('WP_SITEURL', WP_HOME . '/wp'); // path to wordpress
+
 // CMS settings
 define('EMPTY_TRASH_DAYS',    0);
 define('DISALLOW_FILE_EDIT',  true);
 define('WP_POST_REVISIONS',   false);
 define('DISALLOW_FILE_MODS',  true); // we deploy with git!
 
-// Site URLs -- these should be manually set for Production, local can fall
-  // back to common-after.php's version:
-  // define('WP_HOME',    DKO_CONFIG_PROTOCOL . '//' . $_SERVER['SERVER_NAME']); // path to blog root
-  // define('WP_SITEURL', WP_HOME . '/wp'); // path to wordpress
+// API Keys
 
+// OpenShift
 // This is where we define the OpenShift specific secure variable functions
 // https://github.com/openshift/wordpress-example/blob/master/php/wp-config.php
 
 // Authentication Unique Keys and Salts.
+// Make sure you generate these for OpenShift! The defaults here are from the
+// WordPress example repo on OpenShift's github.
 // @link https://api.wordpress.org/secret-key/1.1/salt/
 $_default_keys = array(
   'AUTH_KEY'          => ' w*lE&r=t-;!|rhdx5}vlF+b=+D>a)R:nTY1Kdrw[~1,xDQS]L&PA%uyZ2:w6#ec',

@@ -38,15 +38,4 @@ define('EMPTY_TRASH_DAYS',    0);
 define('DISALLOW_FILE_EDIT',  true);
 define('WP_POST_REVISIONS',   false);
 
-// Authentication Unique Keys and Salts.
-// @link https://api.wordpress.org/secret-key/1.1/salt/
-define('AUTH_KEY',         'always regenerate these!');
-define('SECURE_AUTH_KEY',  'always regenerate these!');
-define('LOGGED_IN_KEY',    'always regenerate these!');
-define('NONCE_KEY',        'always regenerate these!');
-define('AUTH_SALT',        'always regenerate these!');
-define('SECURE_AUTH_SALT', 'always regenerate these!');
-define('LOGGED_IN_SALT',   'always regenerate these!');
-define('NONCE_SALT',       'always regenerate these!');
-
 // API Keys

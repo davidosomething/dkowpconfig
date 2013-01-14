@@ -1,3 +1,42 @@
+# PHP Site Settings for Rackspace Cloud Sites
+#php_value max_execution_time 3600
+#php_value upload_max_filesize 100M
+#php_value post_max_size 220M
+#php_value memory_limit 256M
+
+# disable directory browsing
+Options All -Indexes
+
+# deny access to all dot (hidden) files (eg .htaccess)
+<Files ~ "^\..*">
+  Order allow,deny
+  Deny from all
+  Satisfy all
+</Files>
+
+# prevent direct access to wp-config.php
+<Files wp-config.php>
+  Order allow,deny
+  Deny from all
+</Files>
+<Directory config>
+  Order allow,deny
+  Deny from all
+</Directory>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # http://codex.wordpress.org/Hardening_WordPress#Securing_wp-includes
+  # Block the include-only files.
+  RewriteRule ^wp/wp-admin/includes/                    - [F,L]
+  RewriteRule !^wp/wp-includes/                         - [S=3]
+  RewriteRule ^wp/wp-includes/[^/]+\.php$               - [F,L]
+  RewriteRule ^wp/wp-includes/js/tinymce/langs/.+\.php  - [F,L]
+  RewriteRule ^wp/wp-includes/theme-compat/             - [F,L]
+</IfModule>
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
