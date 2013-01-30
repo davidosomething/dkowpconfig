@@ -1,3 +1,13 @@
+content/upgrade/
+content/backup-db/
+content/advanced-cache.php
+content/wp-cache-config.php
+sitemap.xml
+*.log
+content/cache/
+content/backups/
+sitemap.xml.gz
+
 ################################################################################
 # OS or Editor folders
 Thumbs.db
