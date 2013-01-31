@@ -19,10 +19,6 @@ Options All -Indexes
   Order allow,deny
   Deny from all
 </Files>
-<Directory config>
-  Order allow,deny
-  Deny from all
-</Directory>
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
