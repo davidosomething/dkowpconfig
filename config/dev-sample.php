@@ -6,8 +6,6 @@
 // Server
 define('WP_MEMORY_LIMIT',     '128M');
 define('SERVER_ENVIRONMENT',  'DEV');
-define('FS_CHMOD_DIR',  02775); // setgid and ug+rw
-define('FS_CHMOD_FILE', 0775);  // ug+rw
 
 // Debugging
 $debug_on = true; $debug_on_string = $debug_on ? 'On' : 'Off';
@@ -28,14 +26,8 @@ define('DB_CHARSET',  'utf8');
 define('DB_COLLATE',  '');
 $table_prefix  = 'wp_';
 
-// Site URLs
-define('WP_HOME',    DKO_CONFIG_PROTOCOL . '//' . $_SERVER['SERVER_NAME']); // path to blog root
-define('WP_SITEURL', WP_HOME . '/wp'); // path to wordpress
-
 // CMS settings
 define('EMPTY_TRASH_DAYS',    0);
-define('DISALLOW_FILE_EDIT',  true);
 define('WP_POST_REVISIONS',   false);
-define('DISALLOW_FILE_MODS',  true); // we deploy with git!
 
 // API Keys

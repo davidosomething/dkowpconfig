@@ -35,9 +35,7 @@ $table_prefix  = 'wp_';
 
 // CMS settings
 define('EMPTY_TRASH_DAYS',    0);
-define('DISALLOW_FILE_EDIT',  true);
 define('WP_POST_REVISIONS',   false);
-define('DISALLOW_FILE_MODS',  true); // we deploy with git!
 
 // API Keys
 

@@ -1,3 +1,4 @@
+config/local.php
 content/upgrade/
 content/backup-db/
 content/advanced-cache.php

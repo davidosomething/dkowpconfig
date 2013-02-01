@@ -29,13 +29,8 @@ define('DB_CHARSET',  'utf8');
 define('DB_COLLATE',  '');
 $table_prefix  = 'wp_';
 
-// Site URLs
-define('WP_HOME',    DKO_CONFIG_PROTOCOL . '//' . $_SERVER['SERVER_NAME']); // path to blog root
-define('WP_SITEURL', WP_HOME . '/wp'); // path to wordpress
-
 // CMS settings
 define('EMPTY_TRASH_DAYS',    0);
-define('DISALLOW_FILE_EDIT',  true);
 define('WP_POST_REVISIONS',   false);
 
 // API Keys
