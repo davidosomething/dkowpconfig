@@ -49,7 +49,7 @@ Settings to avoid
 
 The following config constants are known to cause plugin compatibility issues:
 ```
-// These two mess with the edit_plugins role used by some plugins
+// These two mess with the edit_plugins and update_core capabilities
 define('DISALLOW_FILE_EDIT',  true);  // Turn off file editing menu
 define('DISALLOW_FILE_MODS',  true);  // Turn off core/plugin updates
 ```
