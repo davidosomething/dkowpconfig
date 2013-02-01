@@ -48,7 +48,8 @@ Settings to avoid
 -----------------
 
 The following config constants are known to cause plugin compatibility issues:
-```// These two mess with the edit_plugins role used by some plugins
+```
+// These two mess with the edit_plugins role used by some plugins
 define('DISALLOW_FILE_EDIT',  true);  // Turn off file editing menu
 define('DISALLOW_FILE_MODS',  true);  // Turn off core/plugin updates
 ```
@@ -57,7 +58,8 @@ Deploying on OpenShift
 ======================
 
 In your /.openshift/action_hooks/deploy hook file, add this:
-```rm $OPENSHIFT_REPO_DIR/php/config/local.php && echo "[DEPLOY]--> Deleted local config"
+```
+rm $OPENSHIFT_REPO_DIR/php/config/local.php && echo "[DEPLOY]--> Deleted local config"
 rm $OPENSHIFT_REPO_DIR/php/config/dev.php   && echo "[DEPLOY]--> Deleted dev config"
 [ -d ${OPENSHIFT_DATA_DIR}uploads ] || mkdir ${OPENSHIFT_DATA_DIR}uploads
 ln -sf ${OPENSHIFT_DATA_DIR}uploads ${OPENSHIFT_REPO_DIR}php/content && echo "[DEPLOY]--> Symlinked uploads folder"
