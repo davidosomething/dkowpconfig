@@ -10,3 +10,9 @@
 
 require WPMU_PLUGIN_DIR . '/dkowpconfig/display-environment.php';
 require WPMU_PLUGIN_DIR . '/dkowpconfig/register-theme-directory.php';
+
+// Admin only
+add_action('admin_init', 'dkowpconfig_admin_init');
+function dkowpconfig_admin_init() {
+  require WPMU_PLUGIN_DIR . '/dkowpconfig/remove-dashboard-widgets.php';
+}
