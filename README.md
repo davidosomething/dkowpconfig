@@ -4,7 +4,7 @@ DKO WP Config
 My WordPress configuration and mu-plugin helpers. This is how I setup WordPress
 installs.
 
-http://github.com/davidosomething/dkowpconfig.git
+[Original source: http://github.com/davidosomething/dkowpconfig.git](http://github.com/davidosomething/dkowpconfig.git)
 
 About
 =====
@@ -32,6 +32,45 @@ This configuration also includes a MU ("must use") plugin that:
 The plugin is found in `/content/mu-plugins` and can be disabled by
 deleting the folder `dkowpconfig.php` file and `dkowpconfig`
 folder.
+
+### Migrations mu-plugin ###
+
+Another mu-plugin is the mu-plugin. To deactivate, delete the `dkomigration.php`
+file from the `/content/mu-plugins` folder.
+
+This plugin reads an `options-`_environment_`.php` file from the `/migrations`
+folder found in the site root. If this file has been updated recently, or if
+the `dkomigration` GET param is specified, the mu-plugin updates the WordPress
+Options table (typically `wp_options`) with the values defined in the file.
+
+The GET param makes it easy to script activation of this plugin, e.g.:
+```
+curl http://mysite.com/?dkomigration=1
+```
+to run the migration from a shell.
+
+#### The migration files ####
+There can be an `options-`_environment_`.php` file for each server
+environment defined in `wp-config.php`. So you can have `options-dev.php`,
+`options-prod.php` and so on. These files are all optional.
+
+The structure of the options migration files is a simple PHP file with arrays
+in it for each option. See `options-prod-sample.php` for an example of setting
+up migrations for the [Nextend Facebook Connect plugin](http://wordpress.org/extend/plugins/nextend-facebook-connect/).
+
+There are settings for how to update the options:
+```
+  'serialized'  => true,
+  'mode'        => 'update',
+```
+
+`serialized` means that the option exists as a serialized array and should be
+written back to the wp_options table as such. This should be a boolean.
+
+`mode` is whether to `update` the current options, leaving unspecified parts
+of a serialized array alone, or to completely `replace` the option with what
+you enter. This should be entered as a string.
+
 
 Configuring
 ===========
