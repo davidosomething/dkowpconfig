@@ -4,23 +4,24 @@ class DKOMigration
   public function __construct() {
     $this->migrations_file_basename = strtolower(SERVER_ENVIRONMENT);
     $this->migrations_file = DKO_SITE_DIR . "/migrations/options-{$this->migrations_file_basename}.php";
-    if ($this->is_update_required()) {
+
+    // do nothing if no migrations file. Filesystem checks should be superfast.
+    if (!file_exists($this->migrations_file)) {
+      return false;
+    }
+
+    if ($_GET['dkomigration'] || $this->is_update_required()) {
       add_action('init', array(&$this, 'update_options'));
     }
   }
 
   private function is_update_required() {
-    if (!file_exists($this->migrations_file)) {
-      return false;
-    }
-
     $database_timestamp = get_option('dkomigrate_timestamp');
     $actual_timestamp   = filemtime($this->migrations_file);
     return $database_timestamp != $actual_timestamp;
   }
 
   public function update_options() {
-
     // load the migrations file
     include $this->migrations_file;
 
