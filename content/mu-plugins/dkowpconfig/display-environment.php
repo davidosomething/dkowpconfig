@@ -1,9 +1,9 @@
 <?php
 /**
- * Display the SERVER_ENVIRONMENT constant in the Admin Bar, e.g.
- * DEV or PROD. Links to the admin on click.
+ * Display the SERVER_ENVIRONMENT constant in the Admin Bar
  */
 add_action('admin_bar_menu', 'dkowpconfig_admin_bar_environment', 21);
+
 function dkowpconfig_admin_bar_environment() {
   global $wp_admin_bar;
 
