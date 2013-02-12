@@ -10,3 +10,4 @@
 
 require WPMU_PLUGIN_DIR . '/dkowpconfig/display-environment.php';
 require WPMU_PLUGIN_DIR . '/dkowpconfig/register-theme-directory.php';
+require WPMU_PLUGIN_DIR . '/dkowpconfig/remove-dashboard-widgets.php';

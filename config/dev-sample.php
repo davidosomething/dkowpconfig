@@ -13,7 +13,7 @@ define('WP_DEBUG',          $debug_on);
 define('SAVEQUERIES',       $debug_on);
 define('SCRIPT_DEBUG',      $debug_on);
 define('WP_DEBUG_LOG',      $debug_on);
-define('WP_DEBUG_DISPLAY',  !$debug_on);
+define('WP_DEBUG_DISPLAY',  $debug_on);
 @ini_set('log_errors',      $debug_on_string);
 @ini_set('display_errors',  $debug_on_string);
 

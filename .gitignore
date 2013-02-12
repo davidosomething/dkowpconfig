@@ -1,12 +1,12 @@
 config/local.php
-content/upgrade/
 content/backup-db/
+content/backups/
+content/cache/
+content/upgrade/
 content/advanced-cache.php
 content/wp-cache-config.php
-sitemap.xml
 *.log
-content/cache/
-content/backups/
+sitemap.xml
 sitemap.xml.gz
 
 ################################################################################
@@ -41,4 +41,3 @@ nbproject
 # Dreamweaver added files
 _notes
 dwsync.xml
-
