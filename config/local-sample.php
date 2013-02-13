@@ -4,7 +4,6 @@
  */
 
 // Server
-define('WP_MEMORY_LIMIT',     '128M');
 define('SERVER_ENVIRONMENT',  'LOCAL');
 
 define('FS_METHOD',     'direct');
