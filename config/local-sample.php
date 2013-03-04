@@ -8,7 +8,7 @@ define('SERVER_ENVIRONMENT',  'LOCAL');
 
 define('FS_METHOD',     'direct');
 define('FS_CHMOD_DIR',  02775); // setgid and ug+rw
-define('FS_CHMOD_FILE', 0775);  // ug+rw
+define('FS_CHMOD_FILE', 0664);  // ug+rw
 
 // Debugging
 $debug_on = true; $debug_on_string = $debug_on ? 'On' : 'Off';

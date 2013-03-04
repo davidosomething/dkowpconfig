@@ -6,8 +6,6 @@
 // Server
 define('WP_MEMORY_LIMIT',     '128M');
 define('SERVER_ENVIRONMENT',  'PROD');
-define('FS_CHMOD_DIR',  02775); // setgid and ug+rw
-define('FS_CHMOD_FILE', 0775);  // ug+rw
 
 // Debugging
 $debug_on = false; $debug_on_string = $debug_on ? 'On' : 'Off';
@@ -27,11 +25,6 @@ define('DB_HOST',     $_ENV['OPENSHIFT_MYSQL_DB_HOST'] . ':' . $_ENV['OPENSHIFT_
 define('DB_CHARSET',  'utf8');
 define('DB_COLLATE',  '');
 $table_prefix  = 'wp_';
-
-// Site URLs -- these should be manually set for Production, local can fall
-  // back to common-after.php's version:
-  // define('WP_HOME',    DKO_CONFIG_PROTOCOL . '//' . $_SERVER['SERVER_NAME']); // path to blog root
-  // define('WP_SITEURL', WP_HOME . '/wp'); // path to wordpress
 
 // CMS settings
 define('EMPTY_TRASH_DAYS',    0);
