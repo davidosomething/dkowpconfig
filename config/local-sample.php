@@ -33,6 +33,9 @@ $table_prefix  = 'wp_';
 define('EMPTY_TRASH_DAYS',    0);
 define('WP_POST_REVISIONS',   false);
 
+// Development
+define('JETPACK_DEV_DEBUG', true);
+
 // Auth Keys
 // DO THIS! Adds an extra security layer since if DB gets hacked at least your
 // login salts (and user passwords) will be safe.
