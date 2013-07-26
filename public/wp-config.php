@@ -16,21 +16,30 @@ define('DKO_CONFIG_DIR', DKO_SITE_DIR . '/config');
 $environments = array(
   'local',
   'dev',
-  // array('dev.mysite.com' => 'dev'), // this is an example servername specific config
+  // this is an example servername specific config, you can also match against $_ENV
+  'dev'   => array('match' => array('myserver.com', $_SERVER['SERVER_NAME'])),
   'qa',
   'stage',
   'prod',
 );
 
 include DKO_CONFIG_DIR . '/common-before.php';
-foreach ($environments as $environment) {
-  // config is server specific
-  if (is_array($environment)) {
-    $key = key($environment);
-    if ($key === $_SERVER['SERVER_NAME']) {
-      $environment = $environment[$key];
+foreach ($environments as $file => $conditions) {
+  if (!is_array($conditions)) {
+    $environment = $conditions;
+  }
+  else {
+    $is_condition_met = false;
+    foreach ($conditions as $condition => $values) {
+      if ($condition === 'match') {
+        $is_condition_met = ($values[0] === $values[1]);
+      }
     }
-    else { // ignore this config
+
+    if ($is_condition_met) {
+      $environment = $file;
+    }
+    else { // failed condition, skip this config
       continue;
     }
   }

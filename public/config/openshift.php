@@ -1,5 +1,4 @@
 <?php
-
 // https://github.com/openshift/wordpress-example/blob/master/php/wp-config.php
 // This function gets called by openshift_secure and passes an array
 function make_secure_key($args) {
@@ -25,6 +24,7 @@ function make_secure_key($args) {
 }
 
 
+// https://github.com/openshift/wordpress-example/blob/master/.openshift/openshift.inc
 // Generate OpenShift secure keys (or return defaults if not on OpenShift)
 $array = openshift_secure($_default_keys,'make_secure_key');
 
@@ -32,6 +32,7 @@ $array = openshift_secure($_default_keys,'make_secure_key');
 foreach ($array as $key => $value) {
   define($key,$value);
 }
+
 // Gets the secret token provided by OpenShift 
 // Or generates one (this is slightly less secure, but good enough for now)
 function get_openshift_secret_token() {

@@ -14,5 +14,5 @@ function dkowpconfig_admin_bar_environment() {
     'title' => '<b style="font-weight:700;">' . SERVER_ENVIRONMENT . '</b>',
     'href'  => admin_url()
   );
-  $wp_admin_bar->add_menu($args);
+  $wp_admin_bar->add_node($args);
 }

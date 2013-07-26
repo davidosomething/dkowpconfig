@@ -6,6 +6,7 @@
 // Server
 define('SERVER_ENVIRONMENT',  'LOCAL');
 
+// Filesystem
 define('FS_METHOD',     'direct');
 define('FS_CHMOD_DIR',  02775); // setgid and ug+rw
 define('FS_CHMOD_FILE', 0664);  // ug+rw
