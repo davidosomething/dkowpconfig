@@ -26,7 +26,3 @@ defined('WP_CONTENT_URL') or define('WP_CONTENT_URL', WP_HOME . '/content');
 defined('WP_PLUGIN_DIR')  or define('WP_PLUGIN_DIR', dirname(__DIR__) . '/plugins');
 defined('WP_PLUGIN_URL')  or define('WP_PLUGIN_URL', WP_HOME . '/plugins');
 defined('PLUGINDIR')      or define('PLUGINDIR', dirname(__DIR__) . '/plugins'); // compatibility
-
-// Don't touch if WordPress lives in the wp folder
-defined('ABSPATH') or define('ABSPATH', dirname(__DIR__) . DKO_CORE_FOLDER . '/');
-require_once(ABSPATH . 'wp-settings.php');
