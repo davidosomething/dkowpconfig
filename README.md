@@ -19,7 +19,9 @@ Plugins are in the `/plugins` folder.
 * Enter in environments into the array in `wp-config.php` by priority.
   Server names may be provided as the array keys to lock a config to a
   server name.
-* There are values in `config/common-before.php` you must change!
+* Add your auth keys to `config/common-after.php` (or define per config).
+* There are values in `config/common-before.php` you really should change, such
+  as the table prefix.
 * Fill in files `config/local-sample.php`, `config/dev-sample.php`, etc. as they
   correlate with the environments you specified in the `wp-config.php` file.
     * An example config for deploying to the [OpenShift](http://openshift.redhat.com/)
