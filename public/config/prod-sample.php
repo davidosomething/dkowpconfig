@@ -1,6 +1,8 @@
 <?php
 /**
  * Production environment configuration
+ *
+ * Remove values from common-before.php if you want them to be config specific.
  */
 
 // Server
@@ -8,27 +10,19 @@ define('WP_MEMORY_LIMIT',     '128M');
 define('SERVER_ENVIRONMENT',  'PROD');
 
 // Debugging
-$debug_on = false; $debug_on_string = $debug_on ? 'On' : 'Off';
-define('WP_DEBUG',          $debug_on);
-define('SAVEQUERIES',       $debug_on);
-define('SCRIPT_DEBUG',      $debug_on);
-define('WP_DEBUG_LOG',      $debug_on);
-define('WP_DEBUG_DISPLAY',  $debug_on);
-@ini_set('log_errors',      $debug_on_string);
-@ini_set('display_errors',  $debug_on_string);
+define('WP_DEBUG',          false);
+define('SAVEQUERIES',       false);
+define('SCRIPT_DEBUG',      false);
+define('WP_DEBUG_LOG',      true);
+define('WP_DEBUG_DISPLAY',  false);
+@ini_set('log_errors',      true);
+@ini_set('display_errors',  false);
 
 // Database
 define('DB_NAME',     $_ENV['OPENSHIFT_APP_NAME']);
 define('DB_USER',     $_ENV['OPENSHIFT_MYSQL_DB_USERNAME']);
 define('DB_PASSWORD', $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD']);
 define('DB_HOST',     $_ENV['OPENSHIFT_MYSQL_DB_HOST'] . ':' . $_ENV['OPENSHIFT_MYSQL_DB_PORT']);
-define('DB_CHARSET',  'utf8');
-define('DB_COLLATE',  '');
-$table_prefix  = 'wp_';
-
-// CMS settings
-define('EMPTY_TRASH_DAYS',    0);
-define('WP_POST_REVISIONS',   false);
 
 // API Keys
 

@@ -15,18 +15,17 @@ can upgrade WordPress using git or just replacing the entire `wp` folder.
 Plugins are in the `/plugins` folder.
 
 ## Setup
-
 * Assume WordPress is in `wp` folder in root.
 * Enter in environments into the array in `wp-config.php` by priority.
   Server names may be provided as the array keys to lock a config to a
   server name.
+* There are values in `config/common-before.php` you must change!
 * Fill in files `config/local-sample.php`, `config/dev-sample.php`, etc. as they
   correlate with the environments you specified in the `wp-config.php` file.
     * An example config for deploying to the [OpenShift](http://openshift.redhat.com/)
       PaaS is provided as `config/prod-sample.php`
 
 ### Config settings to avoid
-
 The following config constants are known to cause plugin compatibility issues:
 ```
 // These two mess with the edit_plugins and update_core capabilities
@@ -84,7 +83,6 @@ you enter. This should be entered as a string.
 ## Appendix
 
 ### Deploying on RedHat OpenShift
-
 In your /.openshift/action_hooks/deploy hook file, add this:
 ```
 rm $OPENSHIFT_REPO_DIR/php/config/local.php && echo "[DEPLOY]--> Deleted local config"
