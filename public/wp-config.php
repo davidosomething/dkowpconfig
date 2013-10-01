@@ -53,6 +53,6 @@ foreach ($environments as $file => $conditions) {
 }
 include DKO_CONFIG_DIR . '/common-after.php';
 
-// Don't touch if WordPress lives in the wp folder
+// Don't touch if WordPress lives in the `wp` folder
 defined('ABSPATH') or define('ABSPATH', dirname(__DIR__) . DKO_CORE_FOLDER . '/');
 require_once(ABSPATH . 'wp-settings.php');

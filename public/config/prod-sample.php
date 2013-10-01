@@ -12,17 +12,20 @@ define('SERVER_ENVIRONMENT',  'PROD');
 // Debugging
 define('WP_DEBUG',          false);
 define('SAVEQUERIES',       false);
-define('SCRIPT_DEBUG',      false);
 define('WP_DEBUG_LOG',      true);
-define('WP_DEBUG_DISPLAY',  false);
 @ini_set('log_errors',      true);
+define('WP_DEBUG_DISPLAY',  false);
 @ini_set('display_errors',  false);
+define('SCRIPT_DEBUG',      false);
 
 // Database
-define('DB_NAME',     $_ENV['OPENSHIFT_APP_NAME']);
-define('DB_USER',     $_ENV['OPENSHIFT_MYSQL_DB_USERNAME']);
-define('DB_PASSWORD', $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD']);
-define('DB_HOST',     $_ENV['OPENSHIFT_MYSQL_DB_HOST'] . ':' . $_ENV['OPENSHIFT_MYSQL_DB_PORT']);
+define('DB_NAME',     getenv('OPENSHIFT_APP_NAME'));
+define('DB_USER',     getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASSWORD', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DB_HOST',     getenv('OPENSHIFT_MYSQL_DB_HOST') . ':' . getenv('OPENSHIFT_MYSQL_DB_PORT'));
+
+// CMS
+define('FORCE_SSL_ADMIN', true); // openshift admin in SSL
 
 // API Keys
 

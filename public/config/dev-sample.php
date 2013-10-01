@@ -6,8 +6,8 @@
  */
 
 // Server
-define('WP_MEMORY_LIMIT',     '128M');
 define('SERVER_ENVIRONMENT',  'DEV');
+// define('WP_MEMORY_LIMIT',     '128M');
 
 // Debugging
 define('WP_DEBUG',          true);
@@ -23,9 +23,5 @@ define('DB_NAME',     '');
 define('DB_USER',     '');
 define('DB_PASSWORD', '');
 define('DB_HOST',     'localhost');
-
-// CMS settings
-define('EMPTY_TRASH_DAYS',    0);
-define('WP_POST_REVISIONS',   false);
 
 // API Keys
