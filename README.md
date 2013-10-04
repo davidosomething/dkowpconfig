@@ -1,7 +1,7 @@
 # DKO WP Config
 
 > My WordPress configuration and mu-plugin helpers. This is how I setup WordPress installs.
-  [Original source: http://github.com/davidosomething/dkowpconfig.git](http://github.com/davidosomething/dkowpconfig.git)
+  [github.com/davidosomething/dkowpconfig](http://github.com/davidosomething/dkowpconfig)
 
 ## About
 This is a WordPress config setup that modifies `wp-config.php` to work with
@@ -14,11 +14,22 @@ can upgrade WordPress using git or just replacing the entire `wp` folder.
 
 Plugins are in the `/plugins` folder.
 
+## Requirements and tooling
+I strongly recommend using [composer](http://getcomposer.org/) to manage your
+plugins -- and your theme as well.
+
+[wp-cli](http://wp-cli.org/) is a commandline tool for managing WordPress and
+can be used in conjunction with composer to add and remove plugins.
+
 ## Setup
-* Assume WordPress is in `wp` folder in root.
+* If you aren't using composer, edit the `.gitignore` file accordingly to track
+  the core, plugins, and themes folders. It's commented.
+* Install WordPress into the `wp` folder in the site root (preferably using
+  `composer install`)
 * Enter in environments into the array in `wp-config.php` by priority.
   Server names may be provided as the array keys to lock a config to a
-  server name.
+  server name. You must edit this, it's currently set up with examples for
+  various environments that you may or may not have.
 * Add your auth keys to `config/common-after.php` (or define per config).
 * There are values in `config/common-before.php` you really should change, such
   as the table prefix.
@@ -30,17 +41,43 @@ Plugins are in the `/plugins` folder.
 ### Config settings to avoid
 The following config constants are known to cause plugin compatibility issues:
 ```
-// These two mess with the edit_plugins and update_core capabilities
+// These two settings can mess up some plugins since the edit_plugins and
+// update_core capabilities will not be created when they are active.
+// So don't use them.
 define('DISALLOW_FILE_EDIT',  true);  // Turn off file editing menu
 define('DISALLOW_FILE_MODS',  true);  // Turn off core/plugin updates
 ```
 
-## About the included MU-plugins
+## Composer
+### Composer for core
+Composer installs WordPress using the [method outlined on the roots theme
+site](http://roots.io/using-composer-with-wordpress/).
+
+### Composer for plugins
+Plugins are also managed through composer using Outlandish's [wpackagist](http://wpackagist.org/)
+repository. The `composer.json` file is set up to install them into `plugins/`
+and `content/mu-plugins` as needed.
+
+The following are plugins I commonly use and have included in the
+`composer.json` file. You can remove them if you don't want them.
+
+* [Advanced Custom Fields](http://www.advancedcustomfields.com/) allows you to
+  easily create custom fields on your post edit.
+* [Regenerate Thumbnails](http://wordpress.org/plugins/regenerate-thumbnails/)
+  Is the best plugin for regenerating images in different sizes when uploaded
+  to the WordPress media library
+* [WP Composer](http://wordpress.org/plugins/composer/) allows you to use wp-cli
+  to install plugins and manage WordPress
+
+### Composer for themes
+Themes can be installed via composer into `content/themes`.
+
+## About the included mu-plugins
 The mu-plugins for this configuration are actually kept in the `dkowpconfig`
 folder. This allows you to update all of them by simply overwriting the folder
 with the latest content from the repo.
 
-### Compatibility and Environment mu-plugin
+### Compatibility and environment mu-plugin
 This configuration also includes a MU ("must use") plugin that:
 
 * Re-enables the WordPress default themes
@@ -87,10 +124,12 @@ you enter. This should be entered as a string.
 ### Deploying on RedHat OpenShift
 In your /.openshift/action_hooks/deploy hook file, add this:
 ```
-rm $OPENSHIFT_REPO_DIR/php/config/local.php && echo "[DEPLOY]--> Deleted local config"
-rm $OPENSHIFT_REPO_DIR/php/config/dev.php   && echo "[DEPLOY]--> Deleted dev config"
 [ -d ${OPENSHIFT_DATA_DIR}uploads ] || mkdir ${OPENSHIFT_DATA_DIR}uploads
-ln -sf ${OPENSHIFT_DATA_DIR}uploads ${OPENSHIFT_REPO_DIR}php/content && echo "[DEPLOY]--> Symlinked uploads folder"
+ln -sf ${OPENSHIFT_DATA_DIR}uploads ${OPENSHIFT_REPO_DIR}php/content
 ```
 
-You can probably enable hot deploys as well.
+You can probably [enable hot deploys](https://www.openshift.com/kb/kb-e1057-how-can-i-deploy-my-application-without-having-to-restart-it)
+as well.
+
+### Todo
+* Autorun composer on openshift deploy.

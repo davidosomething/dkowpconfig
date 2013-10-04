@@ -1,3 +1,17 @@
+# Composer
+# Remove this section if you're not using composer to manage WordPress and want
+# the core files in your checkins (or are using submodule/subtree/something else
+# to manage WP)
+# Composer dependencies
+vendor/
+# Plugins and themes are managed by composer using wpackagist.org or regular
+# packagist. Consider setting your theme up as a composer package, too.
+content/mu-plugins/
+content/themes/
+plugins/
+# WordPress is managed by composer as a custom package
+wp/
+
 # WordPress
 content/backup-db/
 content/backups/

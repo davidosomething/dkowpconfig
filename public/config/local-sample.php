@@ -1,10 +1,7 @@
 <?php
 /**
- * Local environment configuration
- *
  * Remove values from common-before.php if you want them to be config specific.
  */
-
 // Server
 define('SERVER_ENVIRONMENT',  'LOCAL');
 
@@ -22,13 +19,18 @@ define('WP_DEBUG_DISPLAY',  true);
 @ini_set('display_errors',  'On');
 define('SCRIPT_DEBUG',      false);
 
+// Development
+define('JETPACK_DEV_DEBUG', true);
+
+////////////////////////////////////////////////////////////////////////////////
+// For all of the following:
+// Ideally you should be using getenv() to read these values from the
+// server environment.
+
 // Database
 define('DB_NAME',     '');
 define('DB_USER',     '');
 define('DB_PASSWORD', '');
 define('DB_HOST',     'localhost');
-
-// Development
-define('JETPACK_DEV_DEBUG', true);
 
 // API Keys

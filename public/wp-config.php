@@ -15,9 +15,8 @@ define('DKO_CONFIG_DIR', DKO_SITE_DIR . '/config');
 
 $environments = array(
   'local',
-  'dev',
   // this is an example servername specific config, you can also match against $_ENV
-  'dev'   => array('match' => array('myserver.com', $_SERVER['SERVER_NAME'])),
+  'dev' => array('match' => array('myserver.com', $_SERVER['SERVER_NAME'])),
   'qa',
   'stage',
   'prod',

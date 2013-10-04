@@ -1,10 +1,8 @@
 <?php
 /**
  * Production environment configuration
- *
  * Remove values from common-before.php if you want them to be config specific.
  */
-
 // Server
 define('WP_MEMORY_LIMIT',     '128M');
 define('SERVER_ENVIRONMENT',  'PROD');
@@ -18,17 +16,10 @@ define('WP_DEBUG_DISPLAY',  false);
 @ini_set('display_errors',  false);
 define('SCRIPT_DEBUG',      false);
 
-// Database
-define('DB_NAME',     getenv('OPENSHIFT_APP_NAME'));
-define('DB_USER',     getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-define('DB_PASSWORD', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-define('DB_HOST',     getenv('OPENSHIFT_MYSQL_DB_HOST') . ':' . getenv('OPENSHIFT_MYSQL_DB_PORT'));
-
 // CMS
 define('FORCE_SSL_ADMIN', true); // openshift admin in SSL
 
-// API Keys
-
+////////////////////////////////////////////////////////////////////////////////
 // OpenShift
 // This is where we define the OpenShift specific secure variable functions
 // https://github.com/openshift/wordpress-example/blob/master/php/wp-config.php
@@ -49,3 +40,16 @@ $_default_keys = array(
 );
 
 require 'openshift.php'; // combined with openshift.inc
+
+////////////////////////////////////////////////////////////////////////////////
+// For all of the following:
+// Ideally you should be using getenv() to read these values from the
+// server environment.
+
+// Database
+define('DB_NAME',     getenv('OPENSHIFT_APP_NAME'));
+define('DB_USER',     getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASSWORD', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DB_HOST',     getenv('OPENSHIFT_MYSQL_DB_HOST') . ':' . getenv('OPENSHIFT_MYSQL_DB_PORT'));
+
+// API Keys

@@ -1,10 +1,7 @@
 <?php
 /**
- * Development environment configuration
- *
  * Remove values from common-before.php if you want them to be config specific.
  */
-
 // Server
 define('SERVER_ENVIRONMENT',  'DEV');
 // define('WP_MEMORY_LIMIT',     '128M');
@@ -17,6 +14,11 @@ define('WP_DEBUG_LOG',      true);
 define('WP_DEBUG_DISPLAY',  false);
 @ini_set('display_errors',  false);
 define('SCRIPT_DEBUG',      false);
+
+////////////////////////////////////////////////////////////////////////////////
+// For all of the following:
+// Ideally you should be using getenv() to read these values from the
+// server environment.
 
 // Database
 define('DB_NAME',     '');
