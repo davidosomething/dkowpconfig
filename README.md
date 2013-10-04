@@ -75,9 +75,6 @@ The following are plugins I commonly use and have included in the
 
 * [Advanced Custom Fields](http://www.advancedcustomfields.com/) allows you to
   easily create custom fields on your post edit.
-* [Regenerate Thumbnails](http://wordpress.org/plugins/regenerate-thumbnails/)
-  Is the best plugin for regenerating images in different sizes when uploaded
-  to the WordPress media library
 * [WP Composer](http://wordpress.org/plugins/composer/) allows you to use wp-cli
   to install plugins and manage WordPress
 

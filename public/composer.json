@@ -26,8 +26,7 @@
     "wordpress": "3.6.1",
     "fancyguy/webroot-installer": "1.0.0",
     "wpackagist/composer":"*",
-    "wpackagist/advanced-custom-fields":"*",
-    "wpackagist/regenerate-thumbnails":"*"
+    "wpackagist/advanced-custom-fields":"*"
   },
   "extra": {
     "webroot-dir": "wp",

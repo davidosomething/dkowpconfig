@@ -54,4 +54,5 @@ include DKO_CONFIG_DIR . '/common-after.php';
 
 // Don't touch if WordPress lives in the `wp` folder
 defined('ABSPATH') or define('ABSPATH', dirname(__DIR__) . DKO_CORE_FOLDER . '/');
+// This next line is read by wp-cli, don't change it
 require_once(ABSPATH . 'wp-settings.php');
