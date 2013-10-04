@@ -25,7 +25,6 @@
     "php": ">=5.3.0",
     "wordpress": "3.6.1",
     "fancyguy/webroot-installer": "1.0.0",
-    "wpackagist/composer":"*",
     "wpackagist/advanced-custom-fields":"*"
   },
   "extra": {

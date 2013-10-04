@@ -24,11 +24,15 @@ can be used in conjunction with composer to add and remove plugins.
 ### Environment management
 It's good practice to not store passwords and API keys in your code. Instead,
 store them on the server and read them into your site using getenv(). This means
-you'll have to modify some bash profile stuff, which you may not like.
+you may need to add and export variables from your bash profile, which you may
+not like if you're running multiple sites.
 
-The real, right way to do handle 
+The cool way to handle your environment is to run your WordPress installs in
+virtual machines, preferably managed by Vagrant. The environment variables would
+be set by chef or puppet (or other provisioner) from the encrypted data store
+(e.g. databags/hiera).
 
-If you really want to develop using a server installed on your machine check out
+If you want to develop using an http server installed locally check out
 [direnv](http://direnv.net/). It's also installable via [homebrew](http://brew.sh/).
 
 ## Setup
@@ -61,6 +65,13 @@ define('DISALLOW_FILE_MODS',  true);  // Turn off core/plugin updates
 ```
 
 ## Composer
+You only need to run composer once per server: when you first set up the stack.
+Afterwards, use wp-cli (or the CMS admin) to manage plugins, themes, and core.
+
+If you're building a site that needs to be rebuilt from scratch or
+redistributed, then you can edit the composer.json file and include what you've
+added so that someone can run it on a new server to get everything.
+
 ### Composer for core
 Composer installs WordPress using the [method outlined on the roots theme
 site](http://roots.io/using-composer-with-wordpress/).
@@ -75,8 +86,6 @@ The following are plugins I commonly use and have included in the
 
 * [Advanced Custom Fields](http://www.advancedcustomfields.com/) allows you to
   easily create custom fields on your post edit.
-* [WP Composer](http://wordpress.org/plugins/composer/) allows you to use wp-cli
-  to install plugins and manage WordPress
 
 ### Composer for themes
 Themes can be installed via composer into `content/themes`.
