@@ -26,6 +26,10 @@ define('JETPACK_DEV_DEBUG', true);
 // For all of the following:
 // Ideally you should be using getenv() to read these values from the
 // server environment.
+// e.g. add to bash:
+// export MYSITE_WP_DB_NAME="mywpdb"
+// and here:
+// define('DB_NAME', getenv('MYSITE_WP_DB_NAME'));
 
 // Database
 define('DB_NAME',     '');

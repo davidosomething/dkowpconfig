@@ -21,6 +21,16 @@ plugins -- and your theme as well.
 [wp-cli](http://wp-cli.org/) is a commandline tool for managing WordPress and
 can be used in conjunction with composer to add and remove plugins.
 
+### Environment management
+It's good practice to not store passwords and API keys in your code. Instead,
+store them on the server and read them into your site using getenv(). This means
+you'll have to modify some bash profile stuff, which you may not like.
+
+The real, right way to do handle 
+
+If you really want to develop using a server installed on your machine check out
+[direnv](http://direnv.net/). It's also installable via [homebrew](http://brew.sh/).
+
 ## Setup
 * If you aren't using composer, edit the `.gitignore` file accordingly to track
   the core, plugins, and themes folders. It's commented.
@@ -31,10 +41,12 @@ can be used in conjunction with composer to add and remove plugins.
   server name. You must edit this, it's currently set up with examples for
   various environments that you may or may not have.
 * Add your auth keys to `config/common-after.php` (or define per config).
+  You can also use getenv() and set them in your server environment.
 * There are values in `config/common-before.php` you really should change, such
   as the table prefix.
 * Fill in files `config/local-sample.php`, `config/dev-sample.php`, etc. as they
   correlate with the environments you specified in the `wp-config.php` file.
+    * Again, using getenv() to retrieve environment variables is recommended. 
     * An example config for deploying to the [OpenShift](http://openshift.redhat.com/)
       PaaS is provided as `config/prod-sample.php`
 

@@ -1,11 +1,10 @@
 <?php
 /**
- * Production environment configuration
  * Remove values from common-before.php if you want them to be config specific.
  */
 // Server
-define('WP_MEMORY_LIMIT',     '128M');
 define('SERVER_ENVIRONMENT',  'PROD');
+// define('WP_MEMORY_LIMIT',     '128M');
 
 // Debugging
 define('WP_DEBUG',          false);
@@ -38,7 +37,6 @@ $_default_keys = array(
   'LOGGED_IN_SALT'    => 'N<mft[~OZp0&Sn#t(IK2px0{KloRcjvIJ1+]:,Ye]>tb*_aM8P&2-bU~_Z>L/n(k',
   'NONCE_SALT'        => 'u E-DQw%[k7l8SX=fsAVT@|_U/~_CUZesq{v(=y2}#X&lTRL{uOVzw6b!]`frTQ|'
 );
-
 require 'openshift.php'; // combined with openshift.inc
 
 ////////////////////////////////////////////////////////////////////////////////

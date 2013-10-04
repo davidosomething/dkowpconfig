@@ -1,3 +1,6 @@
+# direnv - http://direnv.net/
+.envrc
+
 # Composer
 # Remove this section if you're not using composer to manage WordPress and want
 # the core files in your checkins (or are using submodule/subtree/something else
