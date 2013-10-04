@@ -1,32 +1,29 @@
-config/local.php
+# WordPress
 content/backup-db/
 content/backups/
+content/blogs.dir/
 content/cache/
 content/upgrade/
+content/uploads/
 content/advanced-cache.php
 content/wp-cache-config.php
+
+# Generated content
 *.log
 sitemap.xml
 sitemap.xml.gz
 
-################################################################################
-# OS or Editor folders
-Thumbs.db
+# OS or editor folders #
 .cache
+.DS_Store
+.hg
 .project
 .settings
+.svn
 .tmproj
 *.esproj
-nbproject
-.DS_Store
-*.DS_Store
 *.lock
-
-# SCM files/folders
-.hg
-.svn
-
-# Junk
+*.sass-cache
 *.diff
 *.err
 *.orig
@@ -36,8 +33,7 @@ nbproject
 *.swp
 *.vi
 *~
-*.sass-cache
-
-# Dreamweaver added files
 _notes
 dwsync.xml
+nbproject
+Thumbs.db
