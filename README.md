@@ -1,7 +1,8 @@
 # DKO WP Config
 
-> My WordPress configuration and mu-plugin helpers. This is how I setup WordPress installs.
-  [github.com/davidosomething/dkowpconfig](http://github.com/davidosomething/dkowpconfig)
+> Upstream: [github.com/davidosomething/dkowpconfig](http://github.com/davidosomething/dkowpconfig)
+> My WordPress configuration and mu-plugin helpers. This is how I setup
+  WordPress installs.
 
 ## About
 This is a WordPress config setup that modifies `wp-config.php` to work with
@@ -27,10 +28,10 @@ store them on the server and read them into your site using getenv(). This means
 you may need to add and export variables from your bash profile, which you may
 not like if you're running multiple sites.
 
-The cool way to handle your environment is to run your WordPress installs in
-virtual machines, preferably managed by Vagrant. The environment variables would
-be set by chef or puppet (or other provisioner) from the encrypted data store
-(e.g. databags/hiera).
+The cool way to handle your environment is to run your dev WordPress installs in
+virtual machines, preferably managed by [Vagrant](http://vagrantup.com/). The
+environment variables would be set by chef or puppet (or other provisioner) from
+the data store (e.g. databags/hiera).
 
 If you want to develop using an http server installed locally check out
 [direnv](http://direnv.net/). It's also installable via [homebrew](http://brew.sh/).
