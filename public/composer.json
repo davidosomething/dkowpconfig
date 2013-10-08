@@ -27,6 +27,10 @@
     "fancyguy/webroot-installer": "1.0.0",
     "wpackagist/advanced-custom-fields":"*"
   },
+  "require-dev": {
+    "wpackagist/error-log-dashboard-widget":"*",
+    "wpackagist/log-deprecated-notices":"*"
+  },
   "extra": {
     "webroot-dir": "wp",
     "webroot-package": "wordpress",
